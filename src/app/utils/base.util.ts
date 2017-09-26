@@ -7,17 +7,29 @@ export const showNotification = (
     message: string,
 
 ) => {
-    $.notify({
-        message: message,
-      }, {
-        placement: {from, align},
-        offset: {x: 20, y: 35},
-        type,
-        template: `<div class="alert alert-{0} alert-with-icon col-md-4">
-            <i class="material-icons alert-icon">notifications</i>
-            <button class="close" type="button" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
-            <span>{2}</span>
-          </div>`
-      });
+    // $.notify({
+    //     message: message,
+    //   }, {
+    //     placement: {from, align},
+    //     offset: {x: 20, y: 35},
+    //     type,
+    //     template: `<div class="alert alert-{0} alert-with-icon col-md-4">
+    //         <i class="material-icons alert-icon">notifications</i>
+    //         <button class="close" type="button" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
+    //         <span>{2}</span>
+    //       </div>`
+    //   });
+      $.notify({
+        icon: "notifications",
+        message: message
+
+    },{
+        type: type,
+        timer: 1500,
+        placement: {
+            from: from,
+            align: align
+        }
+    });
 
 }

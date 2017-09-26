@@ -2,19 +2,19 @@ import { Injectable } from '@angular/core';
 import { Err } from "../domain/index";
 import { Observable } from "rxjs/Observable";
 import { showNotification } from '../utils/base.util';
-// import { LocalStorage } from '../core/common/local.storage';
+import { LocalStorage } from '../utils/local.storage';
 
 
 @Injectable()
 export class BaseService{
 
     constructor(
-        // private ls: LocalStorage
+       private ls: LocalStorage
     ){
 
     }
 
-    httpError(error: Response | any){
+    httpError(error: any){
         const err = error.json();
         switch(err.error_code)
         {
@@ -28,16 +28,16 @@ export class BaseService{
     }
 
     setToken(token){
-        // this.ls.set('token',token);
+        this.ls.set('token',token);
         return;
     }
 
     getToken(){
-        // return this.ls.get('token');
+        return this.ls.get('token');
     }
 
     removeToken(){
-        // this.ls.remove('token');
+        this.ls.remove('token');
         return;
     }
 }

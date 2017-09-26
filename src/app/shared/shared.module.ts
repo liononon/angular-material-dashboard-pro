@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from "ng2-validation";
+
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/concat';
 import 'rxjs/add/observable/zip';

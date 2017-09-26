@@ -13,8 +13,10 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { AppRoutes } from './app.routing';
+import { SharedModule } from './shared/shared.module';
 
 import { ServicesModule } from './services/services.module';
+import { LocalStorage } from './utils/local.storage';
 @NgModule({
     imports: [
         BrowserModule,
@@ -25,6 +27,7 @@ import { ServicesModule } from './services/services.module';
         NavbarModule,
         FooterModule,
         ServicesModule.forRoot(),
+        SharedModule,
     ],
     declarations: [
         AppComponent,
@@ -32,6 +35,7 @@ import { ServicesModule } from './services/services.module';
         AuthLayoutComponent
     ],
     providers: [
+        LocalStorage,
         { 
             provide: LocationStrategy, 
             useClass: HashLocationStrategy 
